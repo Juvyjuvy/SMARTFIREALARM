@@ -1,0 +1,141 @@
+/* General Layout */
+.dashboard-container {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.dashboard-header {
+  background-color: #e53935;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sfa-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Heat Indicator */
+.heat-indicator {
+  margin: 40px 0;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.heat-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heat-label span {
+  font-size: 18px;
+  color: #333;
+}
+
+.heat-label strong {
+  font-size: 36px;
+  display: block;
+  color: #e53935;
+}
+
+/* Pulse animation */
+.pulse {
+  animation: pulseEffect 1.2s infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Warning Message */
+.warning-message {
+  background-color: #ffcdd2;
+  border: 1px solid #e53935;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: #b71c1c;
+  font-weight: bold;
+}
+
+/* Alarm Button */
+.alarm-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.helmet-icon {
+  width: 80px;
+  height: 80px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  background-color: white;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-button img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+.nav-button.active img {
+  opacity: 1;
+}
+
+.nav-button.active {
+  background-color: #c70000;
+}
+
+.nav-button.active img {
+  filter: brightness(0) invert(1); /* white icon */
+}

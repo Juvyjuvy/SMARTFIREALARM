@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SplashScreen from './SplashScreen';
-import LoginScreen from './LoginScreen';
-import Dashboard from './Dashboard';
+import SplashScreen from './components/SplashScreen/SplashScreen';
+import LoginScreen from './components/LoginScreen/LoginScreen';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
