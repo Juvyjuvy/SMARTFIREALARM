@@ -1,10 +1,13 @@
 import React from 'react';
 import './LoginScreen.css';
 
-function LoginScreen({ onLogin }) {
+function LoginScreen({ onLogin, onRegister }) {
   const handleLoginClick = () => {
-    // You can add validation here if needed
-    onLogin(); // Call the handler passed from App.js
+    onLogin();
+  };
+
+  const handleRegisterClick = () => {
+    onRegister();
   };
 
   return (
@@ -12,7 +15,11 @@ function LoginScreen({ onLogin }) {
       <img src="/fireman-icon.png" alt="Helmet Icon" className="login-icon" />
 
       <div className="login-box">
-        <label>EMAIL ADDRESS</label>
+        <div className="email-label-row">
+          <label>EMAIL ADDRESS</label>
+          <button className="inline-register-button" onClick={handleRegisterClick}>Register</button>
+        </div>
+
         <input type="email" placeholder="Enter email" />
 
         <label>PASSWORD</label>

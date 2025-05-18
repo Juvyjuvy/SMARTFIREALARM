@@ -24,6 +24,23 @@
     gap: 10px;
 }
 
+.email-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inline-register-button {
+    background: none;
+    border: none;
+    color: #c70000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
 .login-box label {
     font-size: 0.75rem;
     font-weight: bold;
