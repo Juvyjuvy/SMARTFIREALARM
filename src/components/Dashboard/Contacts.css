@@ -1,0 +1,228 @@
+.contacts-container {
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 8px 12px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.filter-button {
+  background-color: #e60000;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filter-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.01);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: bold;
+  font-size: 15px;
+  color: #007bff;
+}
+
+.contact-number {
+  font-size: 14px;
+  color: #444;
+}
+  .lucide-icon {
+  margin-right: 8px;
+  color: #555;
+}
+
+.user-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px 40px 40px 40px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #e60000;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+.modal-content p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.user-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-button, .hangup-button {
+  background-color: #e60000;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 35px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-top: 25px;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(230, 0, 0, 0.6);
+}
+
+.call-button:hover {
+  background-color: #cc0000;
+}
+
+.hangup-button {
+  background-color: #444;
+}
+
+.hangup-button:hover {
+  background-color: #222;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes shake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0); }
+}
+
+.shaking {
+  animation: shake 0.5s infinite;
+}
+

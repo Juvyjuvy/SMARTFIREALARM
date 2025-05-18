@@ -92,20 +92,32 @@
 
 /* Alarm Button */
 .alarm-button {
-  background-color: transparent;
+  background-color: #c70000; /* dark red background for button */
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.alarm-button:hover {
+  background-color: #9c0000;
 }
 
 .helmet-icon {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 
 /* Bottom Navigation */
 .bottom-nav {
-  background-color: white;
+  background-color: #e53935; /* same as header */
   border-top: 1px solid #ddd;
   padding: 10px 0;
   display: flex;
@@ -113,8 +125,10 @@
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 1000;
 }
 
+/* Nav buttons */
 .nav-button {
   background: none;
   border: none;
@@ -126,16 +140,20 @@
   width: 30px;
   height: 30px;
   opacity: 0.5;
+  filter: brightness(0) invert(1); /* white icons */
+  transition: opacity 0.3s ease;
+}
+
+.nav-button.active {
+  background-color: #c70000; /* darker red for active */
+  border-radius: 8px;
 }
 
 .nav-button.active img {
   opacity: 1;
-}
-
-.nav-button.active {
-  background-color: #c70000;
-}
-
-.nav-button.active img {
   filter: brightness(0) invert(1); /* white icon */
+}
+
+.nav-button:hover img {
+  opacity: 0.8;
 }
