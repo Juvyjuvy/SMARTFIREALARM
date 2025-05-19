@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './Contacts.css';
-import { Search, Filter, User, X, Phone, PhoneOff } from 'lucide-react';
+import { Search, Filter, User, X, Phone } from 'lucide-react';
 
 const initialContacts = [
   {
@@ -34,7 +34,6 @@ function Contacts() {
   const [selectedContact, setSelectedContact] = useState(null);
   const [isRinging, setIsRinging] = useState(false);
   const ringtoneRef = useRef(null);
-  const timeoutRef = useRef(null);
 
   const filteredContacts = initialContacts.filter(contact =>
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -46,12 +45,6 @@ function Contacts() {
       ringtoneRef.current.currentTime = 0;
       ringtoneRef.current.play();
     }
-
-    // After 3 seconds auto stop ringing and dial
-    timeoutRef.current = setTimeout(() => {
-      stopRinging();
-      window.location.href = `tel:${selectedContact.number}`;
-    }, 3000);
   };
 
   const stopRinging = () => {
@@ -59,10 +52,6 @@ function Contacts() {
     if (ringtoneRef.current) {
       ringtoneRef.current.pause();
       ringtoneRef.current.currentTime = 0;
-    }
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
     }
   };
 
@@ -134,13 +123,13 @@ function Contacts() {
 
               {!isRinging && (
                 <button className="call-button" onClick={handleCallClick}>
-                  <Phone size={24} /> Call
+                  <span className="icon-centered"><Phone size={24} /></span> Call
                 </button>
               )}
 
               {isRinging && (
                 <button className="hangup-button" onClick={handleHangUp}>
-                  <PhoneOff size={24} /> Hang Up
+                  <span className="icon-centered shaking-icon"><Phone size={24} /></span> Hang Up
                 </button>
               )}
             </div>

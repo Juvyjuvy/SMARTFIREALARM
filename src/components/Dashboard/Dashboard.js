@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MapPage from './MapPage';
-import Contacts from './Contacts'; // Make sure Contacts.js exists
+import Contacts from './Contacts';
 import { Alarm } from '@mui/icons-material';
 import './Dashboard.css';
 
@@ -73,7 +73,7 @@ function Dashboard() {
         </button>
       </header>
 
-      {/* === Tabs === */}
+     
       {activeTab === 'home' && (
         <>
           <div className={`heat-indicator ${heat === 100 ? 'pulse' : ''}`}>
@@ -126,7 +126,6 @@ function Dashboard() {
       {activeTab === 'map' && <MapPage />}
       {activeTab === 'contact' && <Contacts />}
 
-      {/* === Bottom Navigation === */}
       <div className="bottom-nav">
         <button
           className={`nav-button ${activeTab === 'home' ? 'active' : ''}`}
