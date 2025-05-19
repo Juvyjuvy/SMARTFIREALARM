@@ -17,16 +17,18 @@ function LoginScreen({ onLogin, onRegister }) {
       <div className="login-box">
         <div className="email-label-row">
           <label>EMAIL ADDRESS</label>
-          <button className="inline-register-button" onClick={handleRegisterClick}>Register</button>
         </div>
-
         <input type="email" placeholder="Enter email" />
 
         <label>PASSWORD</label>
         <input type="password" placeholder="Enter password" />
 
         <button className="login-button" onClick={handleLoginClick}>Log in</button>
-        <p className="forgot-password">Forgot Password?</p>
+
+        <div className="login-footer-row">
+          <button className="inline-register-button" onClick={handleRegisterClick}>Register</button>
+          <p className="forgot-password">Forgot Password?</p>
+        </div>
       </div>
     </div>
   );
