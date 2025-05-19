@@ -1,98 +1,91 @@
 .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #e7e3db;
-    height: 100vh;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e7e3db;
+  height: 100vh;
+  justify-content: center;
 }
 
 .register-icon {
-    width: 60px;
-    margin-bottom: 20px;
+  width: 60px;
+  margin-bottom: 20px;
 }
 
 .register-box {
-    background-color: white;
-    padding: 24px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Container for FULL NAME label and Login button side by side */
-.label-with-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .register-box label {
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: #333;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .register-box input {
-    padding: 8px 10px;
-    border: 2px solid #c70000;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 8px 10px;
+  border: 2px solid #c70000;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .register-box input:focus {
-    border-color: #990000;
-    box-shadow: 0 0 5px rgba(199, 0, 0, 0.3);
+  border-color: #990000;
+  box-shadow: 0 0 5px rgba(199, 0, 0, 0.3);
 }
 
-.register-button,
-.back-button {
-    background-color: #c70000;
-    color: white;
-    font-weight: bold;
-    padding: 10px 0;
-    border: none;
-    border-radius: 40px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.back-button {
-    background-color: transparent;
-    color: #c70000;
-    border: 2px solid #c70000;
+.register-button {
+  background-color: #c70000;
+  color: white;
+  font-weight: bold;
+  padding: 10px 0;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .register-button:hover {
-    background-color: #990000;
+  background-color: #990000;
 }
 
-.back-button:hover {
-    background-color: #c70000;
-    color: white;
+.bottom-link-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
-/* The inline Login button next to FULL NAME label */
 .login-inline-button {
-    background: none;
-    border: none;
-    color: #c70000;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.85rem;
-    text-decoration: underline;
-    padding: 0;
-    margin-left: 8px;
+  background: none;
+  border: none;
+  color: #c70000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  padding: 0;
 }
 
 .login-inline-button:hover {
-    color: #990000;
+  color: #990000;
+}
+
+.forgot-password {
+  color: #c70000;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
 }

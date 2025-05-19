@@ -12,13 +12,7 @@ function RegisterScreen({ onBackToLogin }) {
       <img src="/fireman-icon.png" alt="Helmet Icon" className="register-icon" />
 
       <div className="register-box">
-        <div className="label-with-button">
-          <label>FULL NAME</label>
-          <button className="login-inline-button" onClick={onBackToLogin}>
-            Login
-          </button>
-        </div>
-
+        <label>FULL NAME</label>
         <input type="text" placeholder="Enter full name" />
 
         <label>EMAIL ADDRESS</label>
@@ -30,6 +24,14 @@ function RegisterScreen({ onBackToLogin }) {
         <button className="register-button" onClick={handleRegisterClick}>
           Register
         </button>
+
+        {/* Bottom row with Login and Forgot Password */}
+        <div className="bottom-link-row">
+          <button className="login-inline-button" onClick={onBackToLogin}>
+            Login
+          </button>
+          <span className="forgot-password">Forgot Password?</span>
+        </div>
       </div>
     </div>
   );
