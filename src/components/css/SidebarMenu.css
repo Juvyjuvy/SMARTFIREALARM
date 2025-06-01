@@ -1,0 +1,90 @@
+/* src/components/Dashboard/SidebarMenu.css */
+
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  width: 250px;
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar-wrapper.open {
+  left: 0;
+}
+
+.sidebar-menu {
+  background-color: #c70000;
+  height: 100vh;
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.user-info {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.user-icon svg {
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.menu-links a,
+.menu-links button {
+  display: block;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1; /* allows this section to take up available space */
+}
+
+.logout-button {
+  bottom: 50px;
+  position: fixed;
+  border: none;               /* Remove fixed width */
+  padding: 8px 26px;          /* Padding for clickable area */
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 300px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: white;
+  color: red;
+}

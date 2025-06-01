@@ -1,45 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SplashScreen from './components/SplashScreen/SplashScreen';
 import RegisterScreen from './components/RegisterScreen/RegisterScreen';
 import LoginScreen from './components/LoginScreen/LoginScreen';
 import Dashboard from './components/Dashboard/Dashboard';
+import ProfilePage from './components/Dashboard/ProfilePage';
+import Monitoring from './components/Dashboard/Monitoring';
+import ProtectedRoute from './components/LoginScreen/ProtectedRoute';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleLogin = () => {
-    setLoggedIn(true);
-  };
-
-  const handleStartRegister = () => {
-    setIsRegistering(true);
-  };
-
-  const handleBackToLogin = () => {
-    setIsRegistering(false);
-  };
-
   return (
-    <div className="App">
-      {showSplash ? (
-        <SplashScreen />
-      ) : loggedIn ? (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/register" element={<RegisterScreen />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
+        <Route path="/monitoring" element={<Monitoring />} />
+        <Route path="/dashboard"  
+          element={
+        <ProtectedRoute>
         <Dashboard />
-      ) : isRegistering ? (
-        <RegisterScreen onBackToLogin={handleBackToLogin} />
-      ) : (
-        <LoginScreen onLogin={handleLogin} onRegister={handleStartRegister} />
-      )}
-    </div>
+    </ProtectedRoute>
+  }
+/>
+
+      </Routes>
+    </Router>
   );
 }
 

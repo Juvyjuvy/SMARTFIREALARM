@@ -1,17 +1,40 @@
 import React from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import '../css/Map.css';
+
+// Custom fire icon
+const fireIcon = new L.Icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/128/619/619034.png',
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -35],
+});
+
+// Fire locations array
+const fireLocations = [
+  { lat: 8.228216, lng: 124.244895 },
+  { lat: 8.228316, lng: 124.245195 },
+  { lat: 8.228416, lng: 124.244695 },
+  { lat: 8.228116, lng: 124.244995 },
+];
 
 function MapPage() {
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
-      <iframe
-        title="Google Map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.0245080293367!2d124.24489566945258!3d8.228216199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3255d8a733c4ed6f%3A0xa2ff5d357a3b8302!2sSt.%20Peter's%20College%20-%20Iligan!5e0!3m2!1sen!2sph!4v1683971074920!5m2!1sen!2sph"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-      />
+    <div className='map-section'>
+      <MapContainer center={[8.228216, 124.244895]} zoom={18} style={{ height: '100vh', width: '100%' }}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {fireLocations.map((loc, index) => (
+          <Marker key={index} position={[loc.lat, loc.lng]} icon={fireIcon}>
+            <Popup>🔥 Fire reported here</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   );
 }

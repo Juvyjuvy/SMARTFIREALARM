@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './Contacts.css';
+import '../css/Contacts.css';
 import { Search, Filter, User, X, Phone } from 'lucide-react';
 
 const initialContacts = [
@@ -104,7 +104,7 @@ function Contacts() {
         ))}
       </div>
 
-      <audio ref={ringtoneRef} src="/ringtone.mp3" preload="auto" loop />
+      <audio ref={ringtoneRef} src="/sounds/ringtone.mp3" preload="auto" loop />
 
       {selectedContact && (
         <div className="modal-overlay" onClick={handleCloseModal}>

@@ -27,7 +27,8 @@
 
 /* Helmet Icon */
 .helmet-icon {
-    width: 50px;
+    width: 150px;
+    height: 150px;
     opacity: 0;
     transform: translateY(100px);
     animation: icon-rise 1.2s ease-out forwards;
@@ -49,6 +50,10 @@
     margin-top: -60px;
 }
 
+.logo-wrapper img {
+    width: 100px;
+    height: 100px;
+}
 /* App Title */
 .app-title {
     font-family: 'Arial Black', sans-serif;

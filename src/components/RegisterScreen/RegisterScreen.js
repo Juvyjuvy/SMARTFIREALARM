@@ -1,33 +1,71 @@
-import React from 'react';
-import './RegisterScreen.css';
+import React, { useState } from 'react';
+import '../css/RegisterScreen.css';
+import { supabase } from '../../supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
-function RegisterScreen({ onBackToLogin }) {
-  const handleRegisterClick = () => {
-    alert("Registered successfully!");
-    onBackToLogin();
-  };
+function RegisterScreen() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+ const handleRegisterClick = async () => {
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name: fullName, // stored in raw_user_meta_data
+      },
+    },
+  });
+
+  if (error) {
+    alert("Registration failed: " + error.message);
+    return;
+  }
+
+  alert("Registered successfully! Please check your email to verify.");
+  navigate('/');
+};
+
+
 
   return (
     <div className="register-container">
-      <img src="/fireman-icon.png" alt="Helmet Icon" className="register-icon" />
+      <img src="/images/fireman-icon.png" alt="Helmet Icon" className="register-icon" />
 
       <div className="register-box">
         <label>FULL NAME</label>
-        <input type="text" placeholder="Enter full name" />
+        <input
+          type="text"
+          placeholder="Enter full name"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+        />
 
         <label>EMAIL ADDRESS</label>
-        <input type="email" placeholder="Enter email" />
+        <input
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <label>PASSWORD</label>
-        <input type="password" placeholder="Create password" />
+        <input
+          type="password"
+          placeholder="Create password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <button className="register-button" onClick={handleRegisterClick}>
           Register
         </button>
 
-        {/* Bottom row with Login and Forgot Password */}
         <div className="bottom-link-row">
-          <button className="login-inline-button" onClick={onBackToLogin}>
+          <button className="login-inline-button" onClick={() => navigate('/')}>
             Login
           </button>
           <span className="forgot-password">Forgot Password?</span>
